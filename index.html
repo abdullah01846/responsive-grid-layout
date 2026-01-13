@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>grid Layout</title>
+    <!-- internal css -->
+    <style>
+       body{
+        background-color: rgb(255, 255, 255);
+       }
+      .container {
+        display: grid;
+        gap: 3px;
+        grid-template-columns: repeat(6, 1fr);
+        grid-template-rows: repeat(6, 150px);
+        margin-top: 100px;
+      }
+      img {
+        width: 100%;
+        height: 100%;
+      }
+      .big-img {
+        grid-column: span 6;
+        grid-row: span 2;
+      }
+      .medium {
+        grid-column: span 2;
+        grid-row: span 2;
+      }
+      .small-img {
+        grid-column: span 2;
+        grid-row: span 1;
+      }
+      .big-small {
+        grid-column: span 1;
+        grid-row: span 1;
+      }
+      h1{
+        color: rgb(255, 239, 239);
+        text-align: center;
+        font-size: 50px;
+      }
+      .layout-name{
+        background-color: rgba(212, 0, 255, 0.486);
+        padding: 15px;
+        border-radius: 15px;
+      }
+
+      @media screen  and (max-width: 600px) {
+        .container{
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            /* grid-template-rows: repeat(1, 150px); */
+        }
+        .big-img, .medium, .small-img, .big-small{
+            grid-row: span 1;
+        }
+        h1{
+            font-size: 25px;
+        }
+        .layout-name{
+            padding: 8px;
+            margin-top: 10px;
+
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+       <h1><span class="layout-name">Responsive Grid Layout</span></h1>
+      <div class="container">
+        <div class="big-img">
+          <img src="./images/A.jpg" alt="" />
+        </div>
+        <div class="medium">
+          <img src="./images/b.jpg" alt="" />
+        </div>
+        <div class="medium">
+          <img src="./images/c.jpg" alt="" />
+        </div>
+        <div class="small-img">
+          <img src="./images/d.jpg" alt="" />
+        </div>
+        <div class="small-img">
+          <img src="./images/e.jpg" alt="" />
+        </div>
+        <div class="medium">
+          <img src="./images/f.jpg" alt="" />
+        </div>
+        <div class="big-small">
+          <img src="./images/g.jpg" alt="" />
+        </div>
+        <div class="big-small">
+          <img src="./images/g.jpg" alt="" />
+        </div>
+        <div class="medium">
+          <img src="./images/i.jpg" alt="" />
+        </div>
+        <div class="big-small">
+          <img src="./images/g.jpg" alt="" />
+        </div>
+        <div class="big-small">
+        <img src="./images/g.jpg" alt="" />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
